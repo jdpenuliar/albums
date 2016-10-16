@@ -22,6 +22,9 @@ import React from 'react';
 // import ReactNative from "react-native";
 // IMPORT DESTRUCTURING for the above import
 import { Text, AppRegistry } from 'react-native';
+// compoenent nesting - using other compoenents
+// if referencing to header you dont have to put .js
+import Header from './src/components/header';
 
 // react library contains code to know how a component should behave
 // react library knows how to take a bunch of components and make them work together
@@ -52,10 +55,13 @@ import { Text, AppRegistry } from 'react-native';
 //      );
 // };
 
+// only the root compoenent uses AppRegistry
+// for child components its just exports es6 method
+// compoenent nesting - using other compoenents
+
 const App = () => (
-     <Text>
-          Some haha
-     </Text>
+     // self closing tab it the tag has nothing in it. <Header></Header>
+     <Header />
 );
 
 
