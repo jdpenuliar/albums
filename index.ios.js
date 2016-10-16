@@ -21,7 +21,7 @@
 import React from 'react';
 // import ReactNative from "react-native";
 // IMPORT DESTRUCTURING for the above import
-import { Text, AppRegistry } from 'react-native';
+import { AppRegistry } from 'react-native';
 // compoenent nesting - using other compoenents
 // if referencing to header you dont have to put .js
 import Header from './src/components/header';
