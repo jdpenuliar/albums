@@ -11,7 +11,7 @@
 
 import React from 'react';
 // import ReactNative from 'react-native';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 ///////////////////////////////////////////////
 //             Create a compoenent           //
@@ -22,12 +22,64 @@ import { Text } from 'react-native';
 
 // only the root compoenent uses AppRegistry
 // for child components its just exports es6 method
+// const { textStyle } = styles;
+// const Header = () => (
+//
+//      <Text style={textStyle}>
+//           Albums!
+//      </Text>
+// );
 
-const Header = () => (
-     <Text>
-          Albums!
-     </Text>
-);
+const Header = (props) => {
+     const { textStyle, viewStyle } = styles;
+     return (
+          // view tag is used to position tags
+          // flexbox is how to position elements. System of positioning
+          // elements of the container. in this case the view tag then tells
+          //how to position the text tag.
+
+          //to center, alignItems and justifyContent
+          // justifyContent used to position vertical
+          // alignItems used to position horizontal
+          <View style={viewStyle}>
+               <Text style={textStyle}>
+                    {props.headerDataObject.haha}
+               </Text>
+          </View>
+
+     );
+};
+
+//styling is always inside each compoenent
+// no default styling or packaged styling like bootstrap
+// all camel case
+const styles = {
+     // view tag is used to position tags or its kinda like a div
+     // flexbox is how to position elements
+     //to center, alignItems and justifyContent
+
+     // flexbox is how to position elements. System of positioning
+     // elements of the container. in this case the view tag then tells
+     //how to position the text tag.
+
+     // justifyContent used to position vertical
+     // alignItems used to position horizontal
+     viewStyle: {
+          backgroundColor: '#F8F8F8',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: 60,
+          paddingTop: 15,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 2 },
+          shadowOpacity: 0.2,
+          elevation: 2,
+          position: 'relative'
+     },
+     textStyle: {
+          fontSize: 20
+     }
+};
 
 ///////////////////////////////////////////////
 //       make the compoenent available       //
