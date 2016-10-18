@@ -21,10 +21,14 @@
 import React from 'react';
 // import ReactNative from "react-native";
 // IMPORT DESTRUCTURING for the above import
-import { AppRegistry } from 'react-native';
+import { AppRegistry, View } from 'react-native';
 // compoenent nesting - using other compoenents
 // if referencing to header you dont have to put .js
-import Header from './src/components/header';
+import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
+
+
+const headerData = require('./src/components/Haha');
 
 // react library contains code to know how a component should behave
 // react library knows how to take a bunch of components and make them work together
@@ -59,9 +63,18 @@ import Header from './src/components/header';
 // for child components its just exports es6 method
 // compoenent nesting - using other compoenents
 
+// passing prop is how you pass data
+// first argument is prop
+
 const App = () => (
      // self closing tab it the tag has nothing in it. <Header></Header>
-     <Header />
+     // add style of flex: 1 for scrollview to expand content to entire area of screen
+     <View style={{ flex: 1 }}>
+          <Header headerDataObject={headerData} />
+          <AlbumList />
+     </View>
+
+
 );
 
 
