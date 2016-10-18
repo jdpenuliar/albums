@@ -68,7 +68,8 @@ const headerData = require('./src/components/Haha');
 
 const App = () => (
      // self closing tab it the tag has nothing in it. <Header></Header>
-     <View>
+     // add style of flex: 1 for scrollview to expand content to entire area of screen
+     <View style={{ flex: 1 }}>
           <Header headerDataObject={headerData} />
           <AlbumList />
      </View>

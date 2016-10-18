@@ -1,7 +1,10 @@
 //import Component for extend without destructuring import
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+// import { View } from 'react-native';
+// for scrollable
+import { ScrollView } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 //classes do not require semi colon
 
@@ -65,15 +68,28 @@ class AlbumList extends Component {
           // State - component internal record keeping. Update
           // data in a component. Only for class based components
      }
-
+     //helper function to render albums
+     renderAlbums() {
+          //fat error function
+          //map function is an array helper
+          //it can be called after an array variable
+          // ALWAYS PUT A KEY IN THE JSX!
+          return this.state.albums.map(album =>
+               <AlbumDetail key={album.title} albumProp={album} />
+          );
+     }
      render() {
           console.log(this.state);
           return (
-               <View>
-                    <Text>
-                         Album List!!!! haha
-                    </Text>
-               </View>
+               /*put reference here from the this.state.album in the view*/
+               // <View>
+               //      {this.renderAlbums()}
+               // </View>
+
+               //scrollable
+               <ScrollView>
+                    {this.renderAlbums()}
+               </ScrollView>
           );
      }
 }
