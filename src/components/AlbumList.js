@@ -55,9 +55,16 @@ class AlbumList extends Component {
           //step 2
           // this. setState is a function from Component to update components
           // for rerender
-          axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+
+          // axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+          // .then(response => this.setState({ albums: response.data }));
+
+          axios.get('http://localhost:8000/albums/api/showall')
           .then(response => this.setState({ albums: response.data }));
 
+          // axios.get('http://www.jdpenuliar.com/albums/api/showall')
+          // .then(response => this.setState({ albums: response.data }));
+          console.log('state\n', this.state);
           // Rules of State
           // Definition of state: a plain javascript object used
           //to record and respond to user-triggered events
