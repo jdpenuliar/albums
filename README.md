@@ -1,6 +1,6 @@
 # Albums
 # install node and mongo
-# download this project to another folder (https://github.com/jdpenuliar/JDPPortfolio.git) to get the api from http://localhost:8000/albums/api/showall
+# download this project to another folder (https://github.com/jdpenuliar/JDPPortfolio.git) to get the api from http://localhost:8000/albums/api/showall. If no JSON was sent out go to http://localhost:8000/albums/api/createSample
 # cd into that project and npm install
 # after install run nodemon server.js
 # cd into root folder of this react-native project and npm install
